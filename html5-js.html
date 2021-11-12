@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript vents -mouse position</title>
+    
+
+</head>
+<body id="body">
+<div id="stats">
+    screenX: <input type="text" id="sx" size="7"/><br/>
+    screenY: <input type="text" id="sy" size="7"/><span class="divider">|</span><br/>
+    pageX:  <input type="text" id="px" size="7"/><br/>
+    pageY: <input type="text" id="py" size="7"/><span class="devider">|</span><br/>
+    clientX: <input type="text" id="cx" size="7"/><br/>
+    clientY: <input type="text" id="cy" size="7"/><br/>
+</div>
+<div id="page">
+    <h1>List King</h1>
+    <h2>Buy groceries</h2>
+    <ul>
+        <li><em>fresh</em> figs</li>
+        <li>pine nuts</li>
+        <li>honey</li>
+        <li>balsamic vinegar</li>
+        <li>linguine</li>
+        <li>cream</li>
+        <li>quinoa</li>
+        <li>sourdough bread</li>
+        <li>kale</li>
+    </ul>
+</div>
+<script>
+    var sx= document.getElementById('sx');
+    var sy= document.getElementById('sy');
+    var px= document.getElementById('px');
+    var py= document.getElementById('py');
+    var cx= document.getElementById('cx');
+    var cy= document.getElementById('cy');
+
+    function showPosition(event){
+        sx.value = event.screenX;
+        sy.value = event.screenY;
+        px.value = event.pageX;
+        py.value = event.pageY;
+        cx.value = event.clientY;
+        cy.value = event.clientY;
+    }
+    var el = document.getElementById('body');
+    el.addEventListener("mousemove", showPosition, false);
+</script>
+</body>
+</html>

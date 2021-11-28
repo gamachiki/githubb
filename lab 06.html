@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Viewer demo</title>
+    <style>
+        body{
+            background-color: #979797;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+
+        }
+        .page{
+            max-width: 1000px;
+            max-height: 550px;
+            margin: 0 auto 10px auto;
+
+        }
+        .panel{
+            background-color: #fff;
+            color: #666;
+            box-shadow: 3px 4px 5px rgba(0,0,0,0.2);
+            overflow: auto;
+
+        }
+        button{
+            border: none;
+        }
+
+        h2,h3{
+            font-weight: normal;
+            margin: 0;
+        }
+        h2{
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 230%;
+            line-height: 1em;
+            padding: 20px 0 0 20px ;
+
+        }
+        h3{
+            font-size: 90%;
+            letter-spacing: 0.2em;
+
+        }
+        p{
+            font-family: sans-serif;
+            line-height: 1.4em;
+
+        }
+        a{
+            text-decoration: none;
+        }
+        button{
+            font-size: 200%;
+            text-align: left;
+            text-transform: uppercase;
+        }
+        #billboard {text-align: center;}
+        .js-warning {display: none;}
+        .no-js .js-warning{
+            display: block;
+            border: 3px solid#fff;
+            text-align: center;
+            background-color: #fff;
+            color: #db5391;
+            padding: 10px;
+        }
+    #photo-viewer {
+    position: relative;
+
+    height: 500px;
+    overflow: hidden;
+
+    }
+    #photo-viewer.is-loading:after{
+    content: url('https://cdn.fbsbx.com/v/t59.2708-21/261793215_627431905078532_8636025869056106569_n.gif?_nc_cat=102&fallback=1&ccb=1-5&_nc_sid=041f46&_nc_ohc=d6Y9qOF8aQsAX_v0Cid&tn=zq5Q9Yg3URb5GjhC&_nc_ht=cdn.fbsbx.com&oh=87e4c8e781832c1b7fa54ac54e055712&oe=61A50D7A');
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    }
+    #photo-viewer img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 200%;
+    top: 20%;
+    left: 5%;
+    }
+    #thumbnails {
+    margin: 5px 50px 0 0 ;
+    height: 50px;
+
+
+    }
+    a.active{
+    opacity: 0.3;
+    }
+    .gallery{
+    width: 400px;
+    padding: 20px;
+    float: left;
+    }
+    .description{
+    width: 300px;
+    float: right;
+    padding: 20px 20px 0 0;
+    font-size: 90%;
+    line-height: 1em;
+    top:  35px;
+    right: 250px;
+
+    }
+    .standfirst{
+    margin: 0;
+    }
+    a#buy{
+    background-color: #ed8e6c;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 7px 10px 9px 10px;
+    margin: 5px 0 20px 0;
+    float: right;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    }
+    a#buy:hover{
+    background-color: #ed612f;
+
+    }
+
+        h1{
+            text-align: center;
+            width: 210px;
+            height: 100px;
+            margin: 40px auto 40px auto;
+            background-image: url('https://scontent.fhan3-2.fna.fbcdn.net/v/t1.15752-9/260464954_597438464802996_7844095787210120895_n.png?_nc_cat=107&ccb=1-5&_nc_sid=ae9488&_nc_ohc=-OtkPLonCG8AX97v5kU&_nc_ht=scontent.fhan3-2.fna&oh=c38b8195cef0f8b0d86bf1f59de511a4&oe=61C75469');
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<header><h1>Monsieur Pigeon</h1></header>
+<section class="page panel">
+    <div id="photo-viewer">
+        <h2>THE FLOWERR SERIES </h2>
+        <img src="https://scontent.fhan4-3.fna.fbcdn.net/v/t1.15752-9/258902553_446715607017459_8131820023457443979_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_ohc=mh0peWot95cAX9khCBi&_nc_ht=scontent.fhan4-3.fna&oh=fcbca21990b4633ccdef5bb6afeeb9f6&oe=61C907D4" alt="elder" >
+    </div>
+    <div class="description">
+        <p class="standfirst">take your tastebuds for a gentle stroll through an english garden filled
+            with Monsieurs Pigeon's beautifully </p>
+        <p>with three sweetly floral option: <strong>Elderberry</strong>,<strong>Rose</strong>,and<strong>Chrysanthemum</strong>
+            --all edible and all naturally flavored - t
+            hey mill have you dreaming of butterflies and Birdsong in no time</p>
+        <p><strong>$5.75</strong>/3.5 ox packet</p>
+        <a href="" id="buy">buy now</a>
+    </div>
+    <div id="thumbnails">
+        <a href="https://scontent.fhan4-3.fna.fbcdn.net/v/t1.15752-9/258902553_446715607017459_8131820023457443979_n.jpg?_nc_cat=103&ccb=1-5&_nc_sid=ae9488&_nc_ohc=mh0peWot95cAX9khCBi&_nc_ht=scontent.fhan4-3.fna&oh=fcbca21990b4633ccdef5bb6afeeb9f6&oe=61C907D4" class="thumb active" title="Elderberry"><img src="https://lh3.googleusercontent.com/6LYyUh0xj-IWlg-0oThCqISi7CAmbcEhoGrU46rNYypY0beLmE1rtOWMHiURxSCecDgWIQ=s60" alt="Elderberry"/></a>
+        <a href="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.15752-9/260472813_427352612402846_8207136350027855338_n.jpg?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=BQL29Sqoa5kAX_FvM29&_nc_ht=scontent.fhan3-5.fna&oh=9e3949f3803dd5e25822a176616c8bd2&oe=61C7B463" class="thumb " title="Rose Marshmallow"><img src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.15752-9/cp0/260030380_152059413799366_1499189518744200021_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_ohc=VoSVVYVow_4AX8NPom1&_nc_ht=scontent.fhan4-1.fna&oh=0f5432cb84bbb75ec53558c4ea36df83&oe=61C7AE5F" alt="Rose"/></a>
+        <a href="https://scontent.fhan3-1.fna.fbcdn.net/v/t1.15752-9/259943548_1322053838255377_5596541664750163827_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=ae9488&_nc_ohc=YrBJ6u7zkXMAX8odRvr&_nc_ht=scontent.fhan3-1.fna&oh=8cacc5c095b5021ac28922daed7ec997&oe=61C8DC40" class="thumb " title="Chrysanthemum"><img src="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.15752-9/cp0/259061542_1541421826235077_8237027796565105106_n.jpg?_nc_cat=109&ccb=1-5&_nc_sid=ae9488&_nc_ohc=svc2d01Z7FYAX-N63Go&_nc_oc=AQnzSadVE2ZC34dI3PLjWu0P_UcjQYwarch79VN5vn68bwspuGSqFifCmgs1vfC528w&_nc_ht=scontent.fhan3-5.fna&oh=40a41948b0d1ecc028100ec9acf39b02&oe=61C822D6" alt="Chrysanthemum"/></a>
+
+    </div>
+
+</section>
+
+</body>
+</html>

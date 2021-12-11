@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>practical</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+ <img  class="logo" src="img/register.png" height="200" width="200">
+
+</header>
+<div class="info">
+    <form name="myform" onsubmit="validateform(),formValidate()"  method="post">
+    <h2 class="info1"> Đăng ký thông tin người dùng </h2>
+        <input type="text" class="text" name="firstName" onfocusout="validateform()">
+        <span>Họ</span>
+        <br>
+        <input type="text" class="text" name="lastName" onfocusout="validateform()">
+        <span>Tên</span>
+        <br>
+        <input type="email" class="text" name="email" onfocusout="formValidate()">
+        <span>Email</span>
+        <br>
+        <input type="text" class="text" name="phone">
+        <span>Số điện thoại</span>
+        <br>
+        <span>Giới tính</span>
+            <input  class="gender" type="radio" value="Nam" />Nam
+            <input  class="gender" type="radio" value="Nữ" />Nữ
+            <input  class="gender" type="radio" value="Khác" />Khác
+
+        <br>
+
+    <form>
+        <span>Sở thích</span>
+        <input type="checkbox" class= "sport" value="Bóng đá">Bóng đá
+        <input type="checkbox" class= "sport" value="Bơi lội">Bơi lội
+        <input type="checkbox" class= "sport" value="Điền kinh">Điền kinh
+        <input type="checkbox" class= "sport" value="Cầu lông">Cầu lông
+        <input type ="checkbox" class= "sport" value="Võ thuật">Võ thuật
+   </form>
+        <br>
+    <br>
+        <span class="a1">Giới thiệu bản thân</span>
+        <textarea rows="5" cols="50">
+
+        </textarea>
+
+        <input class="signup" type="submit" value="Submit">
+
+
+        <hr>
+    </form>
+</div>
+<footer>Phạm Đình Tuân-T2108A-tuanpdth2017025@fpt.edu.vn</footer>
+<script src="js/check.js"></script>
+</body>
+</html>
